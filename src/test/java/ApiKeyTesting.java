@@ -20,5 +20,21 @@ public class ApiKeyTesting {
                 ;
     }
 
+    @Test
+    public void apiKeyTestParam(){
+        given()
+                .param("x-api-key" , "GwMco9Tpstd5vbzBzlzW9I7hr6E1D7w2zEIrhOra")
+                .log().uri()
+
+                .when()
+                .get("https://l9njuzrhf3.execute-api.eu-west-1.amazonaws.com/prod/user")
+
+                .then()
+                .statusCode(200)
+                .log().body()
+
+                ;
+    }
+
 
 }
